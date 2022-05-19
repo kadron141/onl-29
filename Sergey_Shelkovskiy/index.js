@@ -1,1 +1,2 @@
-confirma
+'use strict'
+
