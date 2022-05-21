@@ -1,8 +1,8 @@
 'use strict'
 
 let a = +prompt('a');
-let b = +prompt('b')
-let c = +prompt('c')
+let b = +prompt('b');
+let c = +prompt('c');
 let D = b**2 - 4*a*c;
 let x1;
 let x2;
