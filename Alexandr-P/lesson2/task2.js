@@ -3,26 +3,23 @@
 
 "use strict"
 
-let bulletNumber =  +prompt('enter variable bulletNumber');
-let shotsFired = +prompt('enter variable shotsFired');
+const bulletNumber =  +prompt('enter variable bulletNumber');
+const shotsFired = +prompt('enter variable shotsFired');
 
-if (bulletNumber || shotsFired <= 7) {
-  
-  if (bulletNumber > shotsFired) {
-
-      for (let i = 0; i < shotsFired; i++){
-        alert('щёлк');  
-      }
-        alert('игрок выжил');
-
-   } else if (bulletNumber <= shotsFired) {
-    for (let i = 0; i < bulletNumber; i++){
-       alert('щёлк'); 
-    }  
-      alert('игрок не выжил');
-     
-  }
-
+if (bulletNumber && shotsFired && bulletNumber <= 7 && shotsFired <= 7) {
+	let alive = true;
+	
+	for (let i = 1; i <= shotsFired; i++) {
+		alert ('щёлк');
+		if (bulletNumber == i) {
+			alert ('бах!');
+			alive = false;
+			break;
+		}
+	}
+	
+	alert (alive ? 'игрок выжил' : 'игрок не выжил');
+	
 } else {
   alert ('Вы ввели слишком большое число');
 }
