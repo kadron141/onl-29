@@ -17,7 +17,7 @@ for (let i=1;i <= shotsFired;i++) {
  console.log('Щёлк');
 }
 }
-if(result===true){
+if(result){
    console.log('Игрок выжил,Урааа')
 }
 
