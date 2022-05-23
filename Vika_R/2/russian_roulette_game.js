@@ -13,24 +13,23 @@ const MAX_COUNT_BULLET_SLOTS = 7;
 let bulletNumber = +prompt('в каком гнезде пуля?');
 let shotsFired = +prompt('колличество выстрелов?');
 
-if (!(bulletNumber >= MIN_COUNT_BULLET_SLOTS && bulletNumber <= MAX_COUNT_BULLET_SLOTS) ||
-    !(shotsFired >= MIN_COUNT_BULLET_SLOTS && shotsFired <= MAX_COUNT_BULLET_SLOTS)) {
+if ((bulletNumber >= MIN_COUNT_BULLET_SLOTS && bulletNumber <= MAX_COUNT_BULLET_SLOTS) &&
+    (shotsFired >= MIN_COUNT_BULLET_SLOTS && shotsFired <= MAX_COUNT_BULLET_SLOTS)) {
+        for (let i = 1; i <= shotsFired; i++) {
+            if (bulletNumber === i) {
+                console.log('бах!');
+                console.log('Игрок не выжил...');
+                break;
+            } else {
+                console.log('щёлк');
+            }
+        }
+        
+        if (bulletNumber > shotsFired) {
+            console.log('Игрок выжил!!');
+        }
+
+} else{
     console.log(`Ошибка: введите числа в диапазоне от ${MIN_COUNT_BULLET_SLOTS} - ${MAX_COUNT_BULLET_SLOTS}`);
-    bulletNumber = +prompt('в каком гнезде пуля?');
-    shotsFired = +prompt('колличество выстрелов?');
-}
-
-for (let i = 1; i <= shotsFired; i++) {
-    if (bulletNumber === i) {
-        console.log('бах!');
-        console.log('Игрок не выжил...');
-        break;
-    } else {
-        console.log('щёлк');
-    }
-}
-
-if (bulletNumber > shotsFired) {
-    console.log('Игрок выжил!!');
 }
 

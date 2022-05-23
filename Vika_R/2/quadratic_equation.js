@@ -25,13 +25,10 @@ console.log(`discriminant ${discriminant}`);
 
 if (discriminant === 0) {
     x1 = -b / (2 * a);
-    console.log(`один корень уравнения: ${x1}`);
+    console.log(`корень уравнения повторяется и равен: ${x1}`);
 } else if (discriminant > 0) {
     x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
     x2 = (-b - Math.sqrt(discriminant)) / (2 * a);
-    if (x1 === x2) {
-        console.log(`корень уравнения повторяется и равен: ${x1}`);
-    }
     console.log(`корни уравнения: х1 = ${x1}, х2 = ${x2}`);
 } else if (discriminant < 0) {
     console.log('у уравнения нет корней');
