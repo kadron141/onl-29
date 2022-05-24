@@ -16,15 +16,15 @@ let x1, x2;
 let discriminant = b**2 - 4 * a * c;
 
 if (discriminant > 0) {
-x1 = (-b - Math.sqrt(discriminant)) / 2 * a;
+x1 = (-b - Math.sqrt(discriminant)) / (2 * a);
 
-x2 = (-b + Math.sqrt(discriminant)) / 2 * a;
+x2 = (-b + Math.sqrt(discriminant)) / (2 * a);
 
 alert ( `корни уравнения: х1 = ${x1}, x2= ${x2}.`);
 
 } else if (discriminant === 0) {
 
-  x1 = (-b + Math.sqrt(discriminant)) / 2 * a;
+  x1 = (-b + Math.sqrt(discriminant)) / (2 * a);
 
   alert ( `корень уравнения повторяется и равен:${x}.`);
 
