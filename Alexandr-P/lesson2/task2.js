@@ -6,20 +6,21 @@
 const bulletNumber =  +prompt('enter variable bulletNumber');
 const shotsFired = +prompt('enter variable shotsFired');
 
-if (bulletNumber && shotsFired && bulletNumber <= 7 && shotsFired <= 7) {
+if ( 0 < bulletNumber &&  0 < shotsFired && bulletNumber <= 7 && shotsFired <= 7) {
 	let alive = true;
 	
 	for (let i = 1; i <= shotsFired; i++) {
-		alert ('щёлк');
+		
 		if (bulletNumber == i) {
 			alert ('бах!');
 			alive = false;
 			break;
 		}
+		alert ('щёлк');
 	}
 	
 	alert (alive ? 'игрок выжил' : 'игрок не выжил');
 	
 } else {
-  alert ('Вы ввели слишком большое число');
+  alert ('Error, Вы ввели некорректное число');
 }
