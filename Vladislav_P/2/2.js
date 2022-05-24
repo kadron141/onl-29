@@ -1,19 +1,34 @@
 'use strict'
 
-let bulletNumber = 5
+let bulletNumber = +prompt ('укажите ячейку для пули, не должна быть >7 & !=0');
 
-if (bulletNumber > 7) {
-    alert('Условие не выполнено, попробуйте еще раз, число не должно быть больше >7')
+
+if ((bulletNumber>7) || (bulletNumber==0)) {
+    alert('введенное число не соответсвует условиям');
 }
 
 
+let shotsFired = +prompt ('укажите количество выстрелов, не должно быть >7 & !=0');
 
-let shotsFired = prompt('Укажите кол-во выстрелов, <7', 0);
+if ((shotsFired>7) || (shotsFired==0)) {
+    alert('введенное число не соответсвует условиям');
+}
 
-if (shotsFired == bulletNumber) {
-    alert('бах')
-    alert('игрок не выжил')
-} else {
-    alert('щелк')
-    alert('игрок выжил')
+
+for ( let i=1; i <= shotsFired; i++) {
+    if (i===bulletNumber) {
+        alert('бах');
+        alert('игрок не выжил');
+        break
+    }
+    else {
+        alert('щёлк');
+    }
+    console.log(i);
+             
+}
+
+if (bulletNumber>shotsFired)
+{
+    alert('игрок выжил');
 }
