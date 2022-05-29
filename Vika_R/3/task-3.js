@@ -13,19 +13,22 @@ cubeSum(17, 14); // => 15^3+16^3+17^3 = 12384
 cubeSum(9, 9); // => 0
 */
 
+function operateVariables(first,last){
+    let result = 0;
+    for (let i = first + 1; i <= last; i++) {
+        result += i * i * i;
+    }
+    return result;
+}
+
 function cubeSum(n, m) {
     let result = 0;
     if (n > m) {
-        for (let i = m + 1; i <= n; i++) {
-            result += i * i * i;
-        }
+        result = operateVariables(m,n);
         console.log(result);
 
     } else if (n < m) {
-        for (let i = n + 1; i <= m; i++) {
-
-            result += i * i * i;
-        }
+        result = operateVariables(n,m);
         console.log(result);
 
     } else if (n === m) {

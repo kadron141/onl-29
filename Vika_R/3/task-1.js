@@ -7,26 +7,26 @@
 'not picking' ->  'pot nicking'
 */
 
-let old_string = 'not picking';
-let new_string = '';
+let oldString = 'not picking';
+let newString = '';
 
-let first_letter = '';
-let second_letter = old_string[0];
+let firstLetter = '';
+let secondLetter = oldString[0];
 
-for (let i = 1; i < old_string.length; i++) {
-    if (old_string[i - 1] === ' ') {
-        first_letter = old_string[i];
+for (let i = 1; i < oldString.length; i++) {
+    if (oldString[i - 1] === ' ') {
+        firstLetter = oldString[i];
     }
 }
 
-new_string += first_letter;
+newString += firstLetter;
 
-for (let i = 1; i < old_string.length; i++) {
-    if (old_string[i - 1] === ' ') {
-        new_string += second_letter;
+for (let i = 1; i < oldString.length; i++) {
+    if (oldString[i - 1] === ' ') {
+        newString += secondLetter;
         continue;
     }
-    new_string += old_string[i];
+    newString += oldString[i];
 }
 
-console.log(new_string);
+console.log(newString);

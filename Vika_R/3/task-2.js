@@ -13,20 +13,19 @@ comes_after("r8 your friend")                # => "i"
 function comes_after(sentence) {
 
     let letter = 'r';
-    sentence = sentence.replace(/[^a-zа-яё\s]/gi, '');
-    let sentence_toLowerCase = '';
+    letter.toLowerCase();
+    sentence = sentence.replace(/[^a-zа-яё\s]/gi, '').toLowerCase();
+
     let result = '';
 
-    for (let i = 0; i < sentence.length; i++) {
-
-        sentence_toLowerCase += sentence[i].toLowerCase();
-
+    if (sentence[0] === letter && sentence[1] !== ' ') {
+        result += sentence[1];
     }
 
-    for (let i = 0; i < sentence_toLowerCase.length; i++) {
+    for (let i = 1; i < sentence.length; i++) {
 
-        if (sentence_toLowerCase[i - 1] === letter.toLowerCase() && sentence_toLowerCase[i]!== ' ') {
-            result += sentence_toLowerCase[i];
+        if (sentence[i - 1] === letter && sentence[i] !== ' ') {
+            result += sentence[i];
         }
 
     }
