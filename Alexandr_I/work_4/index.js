@@ -13,7 +13,7 @@ function letterAfter(text) {
 	const preparedText = text.toLowerCase();
 	let result = '';
 	let letter = 'r';
-	for (let i = 0; i < preparedText.length; i++) {
+	for (let i = 0; i < preparedText.length-1; i++) {
 		if (preparedText[i] === letter) {
 			result += preparedText[i + 1];
 		}

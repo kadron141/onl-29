@@ -10,15 +10,18 @@
 //cubeSum(9, 9); // => 0
 
 function cubeSum(n, m) {
-	let result = 0;
+	
 	if (n > m) {
-		for (let i = m + 1; i <= n; i++) {
-			result += Math.pow(i, 3);
-		}
+		return cubeSumPow(m, n);
 	} else if (n < m) {
-		for (let i = n + 1; i <= m; i++) {
-			result += Math.pow(i, 3);
-		}
+		return cubeSumPow(n, m);
+	}
+	
+}
+function cubeSumPow(a, b) {
+	let result = 0;
+	for (let i = a + 1; i <= b; i++) {
+		result += Math.pow(i, 3);
 	}
 	return result;
 }
