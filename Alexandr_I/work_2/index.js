@@ -12,7 +12,7 @@ if (bulletNumber > 8 || shotsFired > 8) {
 	for (let i = 1; i <= shotsFired; i++) {
 		if (i < bulletNumber) {
 			console.log(i + '- Щёлк');
-		} else if (i = bulletNumber) {
+		} else if (i === bulletNumber) {
 			console.log(i + '- Бах');
 			console.log('Игрок не выжил');
 			break;
