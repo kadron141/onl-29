@@ -8,30 +8,30 @@
 // comes_after("Pirates say arrrrrrrrr.")       # => "arrrrrrrr"
 // comes_after("r8 your friend")                # => "i"
 
+function comesAfter(str,letter) {
+  
+   let result = '';
+   str = str.toLowerCase();
+   letter = letter.toLowerCase();
+     
 
-
-
-function symbolAfterLetter(sentence){
-
-let letter = 'r'
-//  sentence = sentence.replace(/[r]/gi, ' ');   Так ли тут?
-  let LowercaseSentence = sentence.toLowerCase();
-
- let result = '';
-
- 
-
-
-
-
- console.log(result);
- 
- 
+   for (let i = 0; i < str.length; i++) {
+    
+       if (str[i] === letter) {
+           result +=  str[i + 1] || '';
+        } 
+   
+   } 
+   console.log(result); 
+   return result;
+   
 }
 
-symbolAfterLetter('are you really learning Ruby');
-symbolAfterLetter('Katy Perry is on the radio!');
-symbolAfterLetter('Pirates say arrrrrrrrr.');
-symbolAfterLetter('r8 your friend');
+
+ 
+comesAfter('are you really learning Ruby', 'r');
+comesAfter('Katy Perry is on the radio!', 'r');
+comesAfter('Pirates say arrrrrrrrr.','r');
+comesAfter('r8 your friend','r');
 
 

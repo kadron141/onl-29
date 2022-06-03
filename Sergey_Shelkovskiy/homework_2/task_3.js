@@ -11,33 +11,38 @@
 // // cubeSum(17, 14); // => 15^3+16^3+17^3 = 12384
 // // cubeSum(9, 9); // => 0
 
+
+
+ 
 function cubeSum(n, m){
-   let result = 0;
-   let startСycle_1=m+1;   
-   let startСycle_2=n+1;
-   
+  
+ 
 
-   if(n>m){
-//   Цикл 1
-     for (let i = startСycle_1; i <= n; i++ ){
-     result+=i*i*i;
-    }
+   let result = 0;    
+   let max = Math.max(n,m);
+   let min = Math.min(n,m);
 
-   console.log(result);  
-} else if (n<m) {
-   //  Цикл 2 
-   for ( let i = startСycle_2; i <= m;i++){
-      result+=i*i*i;
+   if(n===m){
+      console.log(result);
+      return result;
+     
    }
-   console.log(result);
+   
+   
+   for(let i = min + 1; i <= max; i++){
+      result += Math.pow(i,3);
+       }
+       console.log(result);     
+       return result;
 
-} else if (n===m){
-   console.log(result);
-} 
-
-}
+   }
+   
+ 
+   
 cubeSum(2,3);
 cubeSum(3,2);
 cubeSum(0,4);
 cubeSum(17, 14);
 cubeSum(9, 9);
+
+
