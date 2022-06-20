@@ -63,8 +63,12 @@ body {
                     border: 1px solid greenyellow;
                     opacity: 0.6;
 
-                    .button {
+                    .button.ok {
                         cursor: auto;
+                    }
+
+                    .button.delete {
+                        cursor: pointer;
                     }
                 }
             }

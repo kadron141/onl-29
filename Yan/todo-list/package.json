@@ -1,5 +1,5 @@
 {
-    "name": "todo-list",
+    "name": "todo_list",
     "source": "src/index.html",
     "scripts": {
         "start": "parcel",
