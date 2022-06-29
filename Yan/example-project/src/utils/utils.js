@@ -1,4 +1,4 @@
-import { MOCK_USERS, USERS_DB_KEY } from './constants.js';
+import { MOCK_USERS, USERS_DB_KEY, USER_KEY } from './constants.js';
 
 let editedUserId, deletedUserId;
 
@@ -103,6 +103,44 @@ const onDelete = (id) => {
     const deleteTextDiv = document.getElementById('delete-text');
     deleteTextDiv.innerHTML = `<span>Are you sure you want to delete <b>${deletedUser.fullName}</b>? This action cannot be undone.</span>`;
     console.log(deletedUser);
+}
+
+export const onAddCancel = () => {
+    const addWindow = document.getElementById('modal-window-add');
+    addWindow.classList.add('hidden');
+}
+
+export const onAddSave = () => {
+    const addName = document.getElementById('add-name').value;
+    const addSurame = document.getElementById('add-surname').value;
+    const addLogin = document.getElementById('add-login').value;
+
+    const newUser = {
+        balance: 0,
+        fullName: `${addName} ${addSurame}`,
+        id: (new Date).valueOf(),
+        login: addLogin,
+        password: addLogin,
+        isAdmin: document.getElementById('add-admin').checked,
+    }
+
+    console.log(newUser)
+
+    const currentUsersList = getUsers();
+    const usersToSave = [...currentUsersList, newUser];
+
+    saveUsers(usersToSave);
+    initializeDasboard();
+    onAddCancel();
+}
+
+export const onAddUser = () => {
+    const deleteWindow = document.getElementById('modal-window-add');
+    deleteWindow.classList.remove('hidden');
+}
+
+export const onLogOut = () => {
+    localStorage.removeItem(USER_KEY);
 }
 
 const getUserAsHtml = (user) => {
