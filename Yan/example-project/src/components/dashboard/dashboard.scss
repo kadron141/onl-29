@@ -1,0 +1,147 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.dashboard-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
+
+    .logout-button {
+        align-self: end;
+        margin-right: 100px;
+    }
+
+    .dashboard-wrapper {
+        width: 90%;
+        height: 80%;
+
+        .dashboard-header {
+            display: flex;
+            margin-top: 30px;
+            align-items: center;
+
+            button {
+                margin-left: auto;
+                width: 50px;
+                height: 50px;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            h1 {
+                margin-bottom: 50px;
+            }
+        }
+
+        .data-list {
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            outline: 1px solid gainsboro;
+
+            .user-wrapper {
+                height: 70px;
+                display: flex;
+                padding: 10px 20px;
+                border-bottom: 1px solid gainsboro;
+                align-items: center;
+
+                button {
+                    margin-left: auto;
+                    width: 200px;
+                    cursor: pointer;
+
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+    }
+
+    .modal-window {
+        width: 700px;
+        height: 430px;
+        position: absolute;
+        outline: 1px solid gainsboro;
+        border-radius: 10px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+
+        &.edit {
+            height: 270px;
+        }
+
+        &.delete {
+            height: 200px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+
+            :first-child {
+                margin-left: auto;
+            }
+
+            button {
+                width: 100px;
+                height: 50px;
+                border: none;
+                cursor: pointer;
+                border-radius: 10px;
+                font-size: 14px;
+                font-weight: 500;
+            }
+
+            .btn-secondary {
+                background-color: white;
+                outline: 1px solid gainsboro;
+            }
+        }
+
+        .modal-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-top: 20px;
+
+            label {
+                font-size: 18px;
+            }
+
+            input {
+                height: 30px;
+            }
+
+            input[type="checkbox"] {
+                transform: scale(2) translate(2px);
+            }
+
+            .is-admin {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+            }
+        }
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.blurred {
+    opacity: 0.25;
+}

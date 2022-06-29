@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./dashboard.scss">
+</head>
+
+<body>
+    <section class="dashboard-container" id="dashboard-container">
+        <div class="logout-button"><button id="log-out">Log out</button></div>
+        <div id="dashboard-wrapper" class="dashboard-wrapper">
+            <div class="dashboard-header">
+                <h1>Dasboard</h1>
+                <button id="add-user-btn">+</button>
+            </div>
+
+            <div class="data-list" id="data-list"></div>
+        </div>
+
+        <div class="modal-window edit hidden" id="modal-window-edit">
+            <div class="modal-form">
+                <label for="edit-name">Name:</label>
+                <input type="text" id="edit-name">
+
+                <label for="edit-surname">Surname:</label>
+                <input type="text" id="edit-surname">
+            </div>
+
+            <div class="buttons">
+                <button id="edit-cancel" class="btn-secondary">Cancel</button>
+                <button id="edit-save">Save</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="./dashboard.js" type="module"></script>
+</body>
+
+</html>

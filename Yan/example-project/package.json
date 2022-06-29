@@ -1,0 +1,13 @@
+{
+    "name": "example-project",
+    "scripts": {
+        "serve:login": "parcel src/components/login/login.html",
+        "serve:dashboard": "parcel src/components/dashboard/dashboard.html"
+    },
+    "dependencies": {
+        "parcel": "latest"
+    },
+    "devDependencies": {
+        "@parcel/transformer-sass": "^2.3.2"
+    }
+}
