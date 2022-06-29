@@ -1,6 +1,6 @@
 import { MOCK_USERS, USERS_DB_KEY } from './constants.js';
 
-let editedUserId;
+let editedUserId, deletedUserId;
 
 export const getUsers = () => {
     const storedUsers = JSON.parse(localStorage.getItem(USERS_DB_KEY));
@@ -78,6 +78,33 @@ export const onEditSave = () => {
     onEditCancel();
 }
 
+export const onDeleteCancel = () => {
+    const deleteWindow = document.getElementById('modal-window-delete');
+    deleteWindow.classList.add('hidden');
+}
+
+export const onDeleteSave = () => {
+    const currentUsersList = getUsers();
+    const usersToSave = currentUsersList.filter(u => u.id !== deletedUserId);
+
+    saveUsers(usersToSave);
+    initializeDasboard();
+    onDeleteCancel();
+}
+
+const onDelete = (id) => {
+    deletedUserId = id;
+
+    const deleteWindow = document.getElementById('modal-window-delete');
+    deleteWindow.classList.remove('hidden');
+
+    const currentUsersList = getUsers();
+    const deletedUser = currentUsersList.find(u => u.id === id);
+    const deleteTextDiv = document.getElementById('delete-text');
+    deleteTextDiv.innerHTML = `<span>Are you sure you want to delete <b>${deletedUser.fullName}</b>? This action cannot be undone.</span>`;
+    console.log(deletedUser);
+}
+
 const getUserAsHtml = (user) => {
     const userWrapper = document.createElement('div');
     const userBody = document.createElement('div');
@@ -85,6 +112,7 @@ const getUserAsHtml = (user) => {
     const editUser = document.createElement('button');
 
     editUser.addEventListener('click', () => { onEdit(user.id) });
+    deleteUser.addEventListener('click', () => { onDelete(user.id) });
 
     userWrapper.className = 'user-wrapper';
 
