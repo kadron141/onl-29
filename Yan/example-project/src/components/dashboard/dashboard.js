@@ -16,7 +16,6 @@ import {
 const search = decodeURIComponent(window.location.search);
 console.log(search.split('=')[1])
 
-
 const cancelEdit = document.getElementById('edit-cancel');
 cancelEdit.addEventListener('click', onEditCancel);
 
